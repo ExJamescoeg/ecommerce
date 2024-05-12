@@ -18,7 +18,7 @@ export default {
       product: {},
       loading: true,
       productCategory: "",
-      currentIndex: 5,
+      currentIndex: 15,
       maxIndex: 20,
     };
   },
