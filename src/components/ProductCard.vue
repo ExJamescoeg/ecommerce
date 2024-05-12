@@ -18,7 +18,7 @@ export default {
       product: {},
       loading: true,
       productCategory: "",
-      currentIndex: 15,
+      currentIndex: 5,
       maxIndex: 20,
     };
   },
@@ -70,7 +70,6 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-/* container and card */
 .product {
   display: flex;
   justify-content: center;

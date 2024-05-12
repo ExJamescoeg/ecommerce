@@ -1,12 +1,12 @@
 <template>
   <div class="card-unavailable">
     <div>
-      <div v-if="loading" class="loader" style="margin-top: 100%"></div>
+      <div v-if="loading" class="loader"></div>
     </div>
     <img v-if="loading" style="opacity: 0%" class="void-unavailable" src="@/assets/sad-face.jpg" alt="Sad-Face" />
     <div v-else>
       <center>
-        <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); font-family: 'Inter'; font-size: 20px; font-weight: 400">This product is unavailable to show</div>
+        <div class="unavailable-message">This product is unavailable to show</div>
       </center>
       <img class="void-unavailable" src="@/assets/sad-face.jpg" alt="Sad-Face" />
     </div>
@@ -64,6 +64,7 @@ img {
   height: 80px;
   animation: spin 2s linear infinite;
   margin: auto;
+  margin-top: 100%;
 }
 
 .unavailable-product {
@@ -87,5 +88,15 @@ button {
 }
 img.void-unavailable {
   padding-left: 30px;
+}
+
+.unavailable-message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 400;
 }
 </style>
