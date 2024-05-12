@@ -57,18 +57,14 @@ img {
   }
 }
 .loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #002772;
+  border: 16px solid var(--color-light-gray);
+  border-top: 16px solid var(--color-dark-blue);
   border-radius: 50%;
   width: 80px;
   height: 80px;
   animation: spin 2s linear infinite;
   margin: auto;
   margin-top: 100%;
-}
-
-.unavailable-product {
-  background-color: #efefef;
 }
 
 button {
@@ -98,5 +94,20 @@ img.void-unavailable {
   font-family: "Inter";
   font-size: 20px;
   font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .card-unavailable {
+    width: 90%;
+  }
+  img.void-unavailable {
+    padding-left: 10px;
+  }
+  button {
+    margin-top: 200px;
+  }
+  .unavailable-message {
+    top: 35%;
+  }
 }
 </style>

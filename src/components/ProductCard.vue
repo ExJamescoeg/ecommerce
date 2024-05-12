@@ -92,12 +92,12 @@ export default {
   position: absolute;
 }
 .background-men-section {
-  background-color: #d6e6ff;
+  background-color: var(--color-light-blue);
 }
 .background-women-section {
-  background-color: #fde2ff;
+  background-color: var(--color-light-pink);
 }
 .background-unavailable-product {
-  background-color: #dcdcdc;
+  background-color: var(--color-light-gray);
 }
 </style>

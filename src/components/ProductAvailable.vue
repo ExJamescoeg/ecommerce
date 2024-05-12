@@ -29,7 +29,7 @@
         <hr />
       </div>
 
-      <div style="min-height: 270px">
+      <div class="description-container">
         <div v-if="loading" class="skeleton-description"><span></span><span></span><span></span><span></span></div>
         <div v-else class="description">{{ product.description }}</div>
       </div>
@@ -64,7 +64,7 @@ export default {
 
 <style scoped>
 .card {
-  background-color: white;
+  background-color: var(--color-white);
   font-weight: 500;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -97,7 +97,7 @@ img {
 .rating {
   font-weight: 400;
   font-size: 17px;
-  color: #3f3f3f;
+  color: var(--color-medium-gray);
 }
 
 .rating {
@@ -108,7 +108,11 @@ img {
 .description {
   font-size: 18px;
   font-weight: 400;
-  color: #1e1e1e;
+  color: var(--color-dark-gray);
+}
+
+.description-container {
+  min-height: 270px;
 }
 
 .price {
@@ -131,15 +135,15 @@ img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--color-white);
   border: 1px solid gray;
 }
 
 .circle.activedwomen-section {
-  background-color: #720060;
+  background-color: var(--color-dark-pink);
 }
 .circle.activedmen-section {
-  background-color: #002772;
+  background-color: var(--color-dark-blue);
 }
 
 /* end circle rating */
@@ -155,8 +159,8 @@ img {
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #002772;
+  border: 16px solid var(--color-light-gray);
+  border-top: 16px solid var(--color-dark-blue);
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -200,10 +204,6 @@ img {
   width: 100px;
   height: 30px;
   margin-top: 5px;
-}
-
-img.void-unavailable {
-  padding-left: 30px;
 }
 
 .skeleton-title,
@@ -253,25 +253,25 @@ button {
 .title-men-section,
 .circle-men-section,
 .price-men-section {
-  color: #002772;
+  color: var(--color-dark-blue);
 }
 
 .title-women-section,
 .circle-women-section,
 .price-women-section {
-  color: #720060;
+  color: var(--color-dark-pink);
 }
 
 .buy-now-men-section {
-  border: 3px solid #002772;
-  background-color: #002772;
-  color: white;
+  border: 3px solid var(--color-dark-blue);
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
   transition: 0.1s;
 }
 .buy-now-women-section {
-  border: 3px solid #720060;
-  background-color: #720060;
-  color: white;
+  border: 3px solid var(--color-dark-pink);
+  background-color: var(--color-dark-pink);
+  color: var(--color-white);
   transition: 0.1s;
 }
 
@@ -283,15 +283,15 @@ button {
 }
 
 .next-product-men-section {
-  border: 3px solid #002772;
-  background-color: white;
-  color: #002772;
+  border: 3px solid var(--color-dark-blue);
+  background-color: var(--color-white);
+  color: var(--color-dark-blue);
   transition: 0.1s;
 }
 .next-product-women-section {
-  border: 3px solid #720060;
-  background-color: white;
-  color: #720060;
+  border: 3px solid var(--color-dark-pink);
+  background-color: var(--color-white);
+  color: var(--color-dark-pink);
   transition: 0.1s;
 }
 
@@ -302,8 +302,74 @@ button {
   padding-bottom: 5px;
 }
 
-.unavailable-product {
-  background-color: #efefef;
-}
 /* end button action */
+
+@media (max-width: 768px) {
+  .card {
+    width: 85%;
+    grid-template-columns: 1fr;
+    padding: 5%;
+    min-height: 700px;
+    height: auto;
+  }
+
+  img {
+    width: 70%;
+    margin: 20px auto;
+  }
+
+  .description-container {
+    min-height: auto;
+  }
+
+  .desc {
+    height: auto;
+  }
+
+  .button-action button {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .skeleton-title,
+  .skeleton-category,
+  .skeleton-rating,
+  .skeleton-description span:nth-child(1),
+  .skeleton-description span:nth-child(2),
+  .skeleton-description span:nth-child(3),
+  .skeleton-description span:nth-child(4),
+  .skeleton-price {
+    width: 100px;
+    height: 15px;
+  }
+
+  .skeleton-price {
+    margin-bottom: 20px;
+  }
+  .price {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 80%;
+  }
+
+  .title,
+  .category,
+  .rating,
+  .description,
+  .price {
+    font-size: smaller;
+  }
+
+  .button-action {
+    flex-direction: column;
+  }
+
+  .button-action button {
+    height: 50px;
+  }
+}
 </style>
